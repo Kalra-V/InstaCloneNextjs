@@ -5,7 +5,7 @@ import Feed from "./components/feed/Feed";
 
 
 export default function Home() {
-  const [isAuthenticated, setIsAuthenticated] = useState(true)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
 
-  return isAuthenticated ? <Feed /> : <Auth />;
+  return isAuthenticated ? <Feed setIsAuthenticated={setIsAuthenticated}  /> : <Auth setIsAuthenticated={setIsAuthenticated} />;
 }

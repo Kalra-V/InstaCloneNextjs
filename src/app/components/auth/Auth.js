@@ -5,7 +5,7 @@ import Button from "../button/Button";
 import useForm from "../../hooks/useForm";
 import { useMemo } from "react";
 
-const Auth = () => {
+const Auth = ({setIsAuthenticated}) => {
     const { form, onChangeHandler } = useForm({
         email: "",
         password: "",
@@ -25,7 +25,6 @@ const Auth = () => {
         <div className="w-screen h-screen flex items-center justify-center">
           <div className="flex h-4/5 w-4/5">
             <div className="w-full h-full">
-              First div
               <Lottie
                 play
                 loop
@@ -58,6 +57,7 @@ const Auth = () => {
                   type="submit"
                   className="bg-[#0095F6] rounded text-sm font-semibold py-2 px-6 text-white active:scale-95 transform transition w-full disabled:bg-opacity-50 disabled:scale-100"
                   disabled={isDisabled}
+                  onClick={() => setIsAuthenticated(true)}
                 >
                   Log In
                 </button>

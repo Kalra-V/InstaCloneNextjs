@@ -2,10 +2,10 @@
 import Header from "../header/Header";
 import Post from "../post/Post";
 
-const Feed = () => {
+const Feed = ({ setIsAuthenticated }) => {
   return (
     <div className="w-full h-full bg-[#FAFAFA]">
-      <Header />
+      <Header setIsAuthenticated={setIsAuthenticated}/>
 
       <div className="grid w-full grid-cols-3 gap-6 mx-auto mt-20 max-w-screen-lg">
         <div className="w-full  col-span-2">

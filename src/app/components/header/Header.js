@@ -9,9 +9,9 @@ import { FaRegUserCircle } from "react-icons/fa";
 import Link from "next/link";
 
 
-const Header = () => {
+const Header = ({ setIsAuthenticated }) => {
     return (
-          <header className="w-full h-16 flex items-center justify-around bg-white shadow-md">
+          <header className="w-full h-16 flex items-center justify-around bg-white shadow-md fixed top-0">
             <Link href="/">
             <div className="text-xl font-semibold tracking-wider">Instagram</div>
             </Link>
@@ -34,7 +34,7 @@ const Header = () => {
               <MdOutlineExplore className="hover:bg-gray-200 rounded p-1 cursor-pointer" size={35}/>
               <CiHeart className="hover:bg-gray-200 rounded p-1 cursor-pointer" size={35}/>
               <FaRegUserCircle className="hover:bg-gray-200 rounded p-1 cursor-pointer" size={30}/>
-              <button className="bg-[#0095F6] text-sm py-1 h-4/5 px-4 rounded font-semibold text-white transform transition">Logout</button>
+              <button className="bg-[#0095F6] text-sm py-1 h-4/5 px-4 rounded font-semibold text-white transform transition" onClick={() => setIsAuthenticated(false)}>Logout</button>
             </div>
           </header>
       );
